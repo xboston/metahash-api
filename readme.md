@@ -1,19 +1,26 @@
 # MetaHash API
-  + [fetch-balance](#fetch-balance)
-  + [fetch-history](#fetch-history)
-  + [get-tx](#get-tx)
-  + [get-block-by-hash](#get-block-by-hash)
-  + [get-block-by-number](#get-block-by-number)
-  + [get-last-txs](#get-last-txs)
-  + [get-blocks](#get-blocks)
-  + [get-dump-block-by-number](#get-dump-block-by-number)
-  + [get-dump-block-by-hash](#get-dump-block-by-hash)
-  + [get-count-blocks](#get-count-blocks)
+- [MetaHash API](#metahash-api)
+  * [Sources](#sources)
+  * [Get data](#get-data)
+    + [fetch-balance](#fetch-balance)
+    + [fetch-history](#fetch-history)
+    + [get-tx](#get-tx)
+    + [get-block-by-hash](#get-block-by-hash)
+    + [get-block-by-number](#get-block-by-number)
+    + [get-last-txs](#get-last-txs)
+    + [get-blocks](#get-blocks)
+    + [get-dump-block-by-number](#get-dump-block-by-number)
+    + [get-dump-block-by-hash](#get-dump-block-by-hash)
+    + [get-count-blocks](#get-count-blocks)
+  * [Send data](#send-data)
+    + [mhc_send](#mhc-send)
 
 ## Sources
 https://github.com/metahashorg/metahash-fullnode-client/blob/master/src/task_handlers/task_handlers.cpp#L29
 
 
+## Get data
+POST http://tor.net-main.metahashnetwork.com:5795
 
 ### fetch-balance
 ```JSON
@@ -522,5 +529,36 @@ https://github.com/metahashorg/metahash-fullnode-client/blob/master/src/task_han
   "result": {
     "count_blocks": 530079
   }
+}
+```
+
+
+## Send data
+POST http://proxy.net-main.metahashnetwork.com:9999
+
+
+### mhc_send
+```JSON
+{
+  "id":1,
+  "jsonrpc":"2.0",
+  "method":"mhc_send",
+  "params":
+  {
+    "transaction":"0004cd0ecb06e091efd2fc486d13c94eafd422486d0d3fc80c01000100",
+    "to":"0x0004cd0ecb06e091efd2fc486d13c94eafd422486d0d3fc80c",
+    "value":"1",
+    "fee":"",
+    "nonce":"1",
+    "data":"",
+    "pubkey":"30563...1ed0af",
+    "sign":"304502...adf804"
+  }
+}
+--->
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": "27857e9bf3e00c35cbfb0d09870250af7585dfdf7b946265e97c8c5f244beaa5"
 }
 ```
