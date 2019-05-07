@@ -11,9 +11,9 @@ https://github.com/metahashorg/metahash-fullnode-client/blob/master/src/task_han
     "id": 1,
     "version": "1.0.0",
     "method": "fetch-balance",
-	  "params":{
-			"address":"0x00fa2a5279f8f0fd2f0f9d3280ad70403f01f9d62f52373833"
-		}
+    "params":{
+      "address":"0x00fa2a5279f8f0fd2f0f9d3280ad70403f01f9d62f52373833"
+    }
 }
 ---
 {
@@ -46,11 +46,11 @@ https://github.com/metahashorg/metahash-fullnode-client/blob/master/src/task_han
     "id": 1,
     "version": "1.0.0",
     "method": "fetch-history",
-	  "params":{
-			"address":"0x00fa2a5279f8f0fd2f0f9d3280ad70403f01f9d62f52373833",
-			"beginTx": 1,
-			"countTxs": 2
-		}
+    "params":{
+      "address":"0x00fa2a5279f8f0fd2f0f9d3280ad70403f01f9d62f52373833",
+      "beginTx": 1,
+      "countTxs": 2
+    }
 }
 ---
 {
