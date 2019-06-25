@@ -16,8 +16,9 @@
     + [mhc_send](#mhc-send)
 
 ## Sources
-https://github.com/metahashorg/metahash-fullnode-client/wiki/Usage
-https://github.com/metahashorg/metahash-fullnode-client/blob/master/src/task_handlers/task_handlers.cpp#L29
+
+ - https://github.com/metahashorg/metahash-fullnode-client/wiki/Usage
+ - https://github.com/metahashorg/metahash-fullnode-client/blob/master/src/task_handlers/task_handlers.cpp#L29
 
 
 
