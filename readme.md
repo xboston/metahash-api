@@ -13,7 +13,7 @@
     + [get-dump-block-by-hash](#get-dump-block-by-hash)
     + [get-count-blocks](#get-count-blocks)
   * [Send data](#send-data)
-    + [mhc_send](#mhc-send)
+    + [mhc_send](#mhc_send)
 
 ## Sources
 
