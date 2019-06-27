@@ -1,7 +1,7 @@
 # MetaHash API
 - [MetaHash API](#metahash-api)
   * [Sources](#sources)
-  * [Get data](#get-data)
+  * Torrent nodes - [Get data](#get-data)
     + [fetch-balance](#fetch-balance)
     + [fetch-balances](#fetch-balances)
     + [fetch-history](#fetch-history)
@@ -13,8 +13,10 @@
     + [get-dump-block-by-number](#get-dump-block-by-number)
     + [get-dump-block-by-hash](#get-dump-block-by-hash)
     + [get-count-blocks](#get-count-blocks)
-  * [Send data](#send-data)
+    + [status](#status)
+  * Proxy node - [Send data](#send-data)
     + [mhc_send](#mhc_send)
+    + [getinfo](#getinfo)
 
 ## Sources
 
@@ -599,6 +601,22 @@ POST http://tor.net-main.metahashnetwork.com:5795
 }
 ```
 
+### status
+```JSON
+{
+    "id": 1,
+    "version": "2.0.0",
+    "method": "status"
+}
+--->
+{
+    "id": 1,
+    "result": "ok",
+    "version": "0.119",
+    "git_hash": "375a22a67ecf9162788d07765f218999bc3a923a"
+}
+```
+
 
 ## Send data
 POST http://proxy.net-main.metahashnetwork.com:9999
@@ -627,5 +645,21 @@ POST http://proxy.net-main.metahashnetwork.com:9999
     "id": 1,
     "jsonrpc": "2.0",
     "result": "27857e9bf3e00c35cbfb0d09870250af7585dfdf7b946265e97c8c5f244beaa5"
+}
+```
+
+### status
+```JSON
+{
+    "id": 1,
+    "version": "2.0.0",
+    "method": "getinfo"
+}
+--->
+{
+    "result": {
+        "version": "0.2 "
+    },
+    "error": null
 }
 ```
