@@ -3,6 +3,7 @@
   * [Sources](#sources)
   * [Get data](#get-data)
     + [fetch-balance](#fetch-balance)
+    + [fetch-balances](#fetch-balances)
     + [fetch-history](#fetch-history)
     + [get-tx](#get-tx)
     + [get-block-by-hash](#get-block-by-hash)
@@ -57,6 +58,69 @@ POST http://tor.net-main.metahashnetwork.com:5795
     "countForgedOps": 40,
     "forged": 449453930
   }
+}
+```
+
+### fetch-balances
+```JSON
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "fetch-balances",
+    "params": {
+        "addresses": [
+            "0x00fa2a5279f8f0fd2f0f9d3280ad70403f01f9d62f52373833",
+            "0x0039f42ad734606d250ea0b0151d4aeab6b4edc6587c4b27ef",
+            "0x005b891007c2000fee08e085beb91494f1d3753eb8eee354f0"
+        ]
+    }
+}
+--->
+{
+    "id": 1,
+    "result": [
+        {
+            "address": "0x00fa2a5279f8f0fd2f0f9d3280ad70403f01f9d62f52373833",
+            "received": 59762397568,
+            "spent": 59713636256,
+            "count_received": 2572,
+            "count_spent": 270,
+            "count_txs": 2813,
+            "block_number": 960249,
+            "currentBlock": 962496,
+            "hash": "7728889007402776173",
+            "countDelegatedOps": 39,
+            "delegate": 39914674162,
+            "undelegate": 34928750583,
+            "delegated": 0,
+            "undelegated": 0,
+            "reserved": 0,
+            "countForgedOps": 124,
+            "forged": 892444488
+        },
+        {
+            "address": "0x0039f42ad734606d250ea0b0151d4aeab6b4edc6587c4b27ef",
+            "received": 116202298002001,
+            "spent": 106395002269262,
+            "count_received": 96,
+            "count_spent": 6327,
+            "count_txs": 6423,
+            "block_number": 962304,
+            "currentBlock": 962496,
+            "hash": "401906331725536639"
+        },
+        {
+            "address": "0x005b891007c2000fee08e085beb91494f1d3753eb8eee354f0",
+            "received": 11756733334374,
+            "spent": 6597005212439,
+            "count_received": 413,
+            "count_spent": 213,
+            "count_txs": 626,
+            "block_number": 962347,
+            "currentBlock": 962496,
+            "hash": "4842209927186827818"
+        }
+    ]
 }
 ```
 
