@@ -648,7 +648,7 @@ POST http://proxy.net-main.metahashnetwork.com:9999
 }
 ```
 
-### status
+### getinfo
 ```JSON
 {
     "id": 1,
