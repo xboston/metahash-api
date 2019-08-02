@@ -5,6 +5,7 @@
     + [fetch-balance](#fetch-balance)
     + [fetch-balances](#fetch-balances)
     + [fetch-history](#fetch-history)
+    + [get-address-delegations](#get-address-delegations)
     + [get-tx](#get-tx)
     + [get-block-by-hash](#get-block-by-hash)
     + [get-block-by-number](#get-block-by-number)
@@ -217,6 +218,37 @@ POST http://tor.net-main.metahashnetwork.com:5795
 }
 ```
 
+
+### get-address-delegations
+```JSON
+{
+    "jsonrpc": "2.0",
+    "method": "get-address-delegations",
+    "params": {
+        "address": "0x00f0bec7a7b832d4400455229103c6cec3abd6736f60152b6d",
+        "beginTx": 0,
+        "countTxs": 10
+    }
+}
+--->
+{
+  "result": {
+    "address": "0x00f0bec7a7b832d4400455229103c6cec3abd6736f60152b6d",
+    "states": [
+      {
+        "to": "0x00f0bec7a7b832d4400455229103c6cec3abd6736f60152b6d",
+        "value": 100000000000,
+        "tx": "c9763e92973b7edab4ace434ce70af68b38166a4fdbfdb0b8af9442e1f9f0264"
+      },
+      {
+        "to": "0x666174686572206f662073657276657220666f7267696e6720",
+        "value": 1000000000,
+        "tx": "fc6fce5c1a7d7f3ea2be716c9c68c0adb73ec2ef6622324022eb3de9f513a003"
+      }
+    ]
+  }
+}
+```
 
 ### get-block-by-hash
 ```JSON
