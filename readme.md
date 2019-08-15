@@ -1,10 +1,11 @@
-# MetaHash API (document version 0.0.2)
+# MetaHash API (document version 0.0.3)
 - [MetaHash API](#metahash-api)
   * [Sources](#sources)
   * Torrent nodes - [Get data](#get-data)
     + [fetch-balance](#fetch-balance)
     + [fetch-balances](#fetch-balances)
     + [fetch-history](#fetch-history)
+    + [fetch-history-filter](#fetch-history-filter)
     + [get-address-delegations](#get-address-delegations)
     + [get-tx](#get-tx)
     + [get-block-by-hash](#get-block-by-hash)
@@ -179,6 +180,74 @@ POST http://tor.net-main.metahashnetwork.com:5795
             "status": "ok"
         }
     ]
+}
+```
+
+### fetch-history-filter
+```JSON
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "fetch-history-filter",
+    "params": {
+        "address": "0x00fa2a5279f8f0fd2f0f9d3280ad70403f01f9d62f52373833",
+        "countTxs": 2,
+        "beginTx": 0,
+        "filters": {
+            "isInput": true
+            // isInput - Display only isInput transactions
+            // isOutput - Display only isOutput transactions
+            // isSuccess - Display only success transactions
+            // isForging - Display only forging transactions
+            // isTest - Display only test transactions
+            // isDelegate - Display only delegation transactions
+        }
+    }
+}
+// RESPONSE --->
+{
+    "id": 1,
+    "result": {
+        "txs": [
+            {
+                "from": "0x008eedae48667e94b654e4a18514fd38c728625099f7a83f55",
+                "to": "0x00fa2a5279f8f0fd2f0f9d3280ad70403f01f9d62f52373833",
+                "value": 547782,
+                "transaction": "735e50cfde6d77551770266e44e9275f49c03c0222eae6308f1741e4ad0fda33",
+                "data": "",
+                "timestamp": 1565829601,
+                "type": "block",
+                "blockNumber": 1393895,
+                "blockIndex": 7,
+                "signature": "304502203b1de28ad6c6efbc8659a3ce1719129d1af7221ebbda591562f7d247d60967f70221009b6d10484d2e4846635be39717ff650e155256ec717922dc39ab0ea8321ab303",
+                "publickey": "3059301306072a8648ce3d020106082a8648ce3d0301070342000444e89f3e6af36fad4b178c531c3ae33c0986b6e75f6a8f1e2fa31d92a12a1dd3dcec5d92a8a7d4311c2764f0f2d294736744d2d4e278d3062b59b3e7f5ccc946",
+                "fee": 0,
+                "realFee": 0,
+                "nonce": 528,
+                "intStatus": 20,
+                "status": "ok"
+            },
+            {
+                "from": "InitialWalletTransaction",
+                "to": "0x00fa2a5279f8f0fd2f0f9d3280ad70403f01f9d62f52373833",
+                "value": 621048,
+                "transaction": "672efd88b50970fedcceb7379e0724bb763d65861081f328e9dfb729dd30d4f3",
+                "data": "",
+                "timestamp": 1565827200,
+                "type": "forging",
+                "blockNumber": 1392955,
+                "blockIndex": 24604,
+                "signature": "",
+                "publickey": "",
+                "fee": 0,
+                "realFee": 0,
+                "nonce": 0,
+                "intStatus": 101,
+                "status": "ok"
+            }
+        ],
+        "nextFrom": 3
+    }
 }
 ```
 
