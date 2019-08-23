@@ -16,6 +16,13 @@
     + [get-dump-block-by-hash](#get-dump-block-by-hash)
     + [get-count-blocks](#get-count-blocks)
     + [get-forging-sum](#get-forging-sum)
+    + [get-last-node-stat-result](#get-last-node-stat-result)
+    + [get-last-node-stat-trust](#get-last-node-stat-trust)
+    + [get-last-node-stat-count](#get-last-node-stat-count)
+    + [get-last-nodes-stats-count](#get-last-nodes-stats-count)
+    + [get-all-last-nodes-count](#get-all-last-nodes-count)
+    + [get-nodes-raiting](#get-nodes-raiting)
+    + [get-common-balance](#get-common-balance)
     + [status](#status)
   * Proxy node - [Send data](#send-data)
     + [mhc_send](#mhc_send)
@@ -931,7 +938,7 @@ POST http://tor.net-main.metahashnetwork.com:5795
 }
 ```
 
-###get-forging-sum-all
+### get-forging-sum-all
 ```JSON
 {
     "id": 1,
@@ -965,6 +972,225 @@ POST http://tor.net-main.metahashnetwork.com:5795
                 "value": 194789794021418
             }
         ]
+    }
+}
+```
+
+### get-forging-sum
+```JSON
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "get-forging-sum",
+    "params": {
+        "block_indent": 1
+    }
+}
+// RESPONSE --->
+{
+    "id": 1,
+    "result": {
+        "blockNumber": 1424739,
+        "sums": [
+            {
+                "type": 104,
+                "value": 174674129635
+            },
+            {
+                "type": 103,
+                "value": 970411832343
+            },
+            {
+                "type": 102,
+                "value": 776329466476
+            },
+            {
+                "type": 100,
+                "value": 0
+            },
+            {
+                "type": 101,
+                "value": 19408227345
+            }
+        ]
+    }
+}
+```
+
+
+### get-last-node-stat-result
+```JSON
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "get-last-node-stat-result",
+    "params": {
+        "address": "0x00d5b768fee94349103e2f69484dff207a3bbb2a5077defd6e"
+    }
+}
+// RESPONSE --->
+{
+    "id": 1,
+    "result": {
+        "address": "0x00d5b768fee94349103e2f69484dff207a3bbb2a5077defd6e",
+        "type": "Proxy",
+        "avgRps": "2156",
+        "ip": "116.202.103.152:9999",
+        "geo": "us",
+        "state": "{\"method\":\"proxy_load_results\",\"params\":{\"ver\":\"1.4\",\"mhaddr\":\"0x00d5b768fee94349103e2f69484dff207a3bbb2a5077defd6e\",\"ip\":\"116.202.103.152:9999\",\"qps\":\"2976\",\"rps\":\"1935\",\"closed\":\"1380\",\"timeouts\":\"1382\",\"geo\":\"us\",\"success\":\"true\"}}",
+        "timestamp": 1566595800,
+        "success": true,
+        "lastBlockTimestamp": 1566596102
+    }
+}
+```
+
+### get-last-node-stat-trust
+```JSON
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "get-last-node-stat-trust",
+    "params": {
+        "address": "0x00d5b768fee94349103e2f69484dff207a3bbb2a5077defd6e"
+    }
+}
+// RESPONSE --->
+{
+    "id": 1,
+    "result": {
+        "address": "0x00d5b768fee94349103e2f69484dff207a3bbb2a5077defd6e",
+        "trust": 265,
+        "data": "{\"state\":81,\"trust\":265,\"delegate_to\":[{\"a\":\"0x666174686572206f662073657276657220666f7267696e6720\",\"v\":1000000000}],\"delegated_from\":[{\"a\":\"0x0031a11c63ee03d4f527cd2dce6807cce71724fd9a1713f738\",\"v\":1000000000},{\"a\":\"0x00d585ed843cbafa83b72f7854088aded64a5d9f143ea7727e\",\"v\":700000000},{\"a\":\"0x005cc86cf1915572360b0d2b3cb5b12900c1325620df2a7b81\",\"v\":6000000000},{\"a\":\"0x000f571063370c6988d04a039b02118a9c2ac8cd43a363719a\",\"v\":516000000},{\"a\":\"0x0031a11c63ee03d4f527cd2dce6807cce71724fd9a1713f738\",\"v\":543000000},{\"a\":\"0x004e2ffa57403f2445dfc3097093f4ab46529bb1c92cc7c623\",\"v\":30000000000},{\"a\":\"0x00722914d7a6f22cd4a3ec43a2b60ee304131028acd1966c85\",\"v\":100000000000},{\"a\":\"0x0023511e8f42ff0c5597c4a1369bf023435a41bae55fcbe9f8\",\"v\":1373165874},{\"a\":\"0x002bfe9f1d205835ab8a055eccea6627220e9296096e12ec07\",\"v\":512000000},{\"a\":\"0x00033e66432c545b646baba654c1215ad94ede07ce73305609\",\"v\":10000000000}]}",
+        "timestamp": 1566518409,
+        "lastBlockTimestamp": 1566596295
+    }
+}
+```
+
+
+### get-last-node-stat-count
+```JSON
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "get-last-node-stat-count",
+    "params": {
+        "address": "0x00d5b768fee94349103e2f69484dff207a3bbb2a5077defd6e"
+    }
+}
+// RESPONSE --->
+{
+    "id": 1,
+    "result": {
+        "address": "0x00d5b768fee94349103e2f69484dff207a3bbb2a5077defd6e",
+        "day": 200,
+        "count": 194,
+        "countAll": 194,
+        "testers": 3,
+        "lastBlockDay": 200
+    }
+}
+```
+
+
+### get-last-nodes-stats-count
+```JSON
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "get-last-nodes-stats-count"
+}
+// RESPONSE --->
+{
+    "id": 1,
+    "result": {
+        "day": 200,
+        "count": 42204,
+        "countAll": 75591,
+        "testers": 3,
+        "lastBlockDay": 200
+    }
+}
+```
+
+
+### get-all-last-nodes-count
+```JSON
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "get-all-last-nodes-count",
+    "params": {
+        "count_tests": 100
+    }
+}
+// RESPONSE --->
+{
+    "id": 1,
+    "result": {
+        "nodes": [
+            {
+                "node": "0x0000496c628660f91a19f04d41c497353d749fda793f86a844",
+                "ip": "116.203.***.***",
+                "type": "InfrastructureTorrent",
+                "count": 196
+            },
+            {
+                "node": "0x000168a8b22adad0c4634d334e37c5e5b4474ab208983f5df7",
+                "ip": "142.91.***.***:9999",
+                "type": "Proxy",
+                "count": 193
+            },
+            {
+                "node": "0x0001a6ba6fd9a6e9e87f468d7fa9f848ebf8adf7a522bd2a18",
+                "ip": "37.48.***.***:9999",
+                "type": "Proxy",
+                "count": 194
+            },
+        ...
+        ],
+        "day": 200,
+        "lastBlockDay": 200
+    }
+}
+```
+
+### get-nodes-raiting
+```JSON
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "get-nodes-raiting",
+    "params": {
+        "address": "0x00d5b768fee94349103e2f69484dff207a3bbb2a5077defd6e",
+        "count_tests": 10
+    }
+}
+// RESPONSE --->
+{
+    "id": 1,
+    "result": {
+        "address": "0x00d5b768fee94349103e2f69484dff207a3bbb2a5077defd6e",
+        "raiting": 4,
+        "day": 200,
+        "lastBlockDay": 200
+    }
+}
+```
+
+### get-common-balance
+```JSON
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "get-common-balance"
+}
+// RESPONSE --->
+{
+    "id": 1,
+    "result": {
+        "balance": 3152838411460513
     }
 }
 ```
