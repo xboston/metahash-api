@@ -1,4 +1,4 @@
-# MetaHash API (document version 0.0.3)
+# MetaHash API (document version 0.0.4)
 - [MetaHash API](#metahash-api)
   * [Sources](#sources)
   * Torrent nodes - [Get data](#get-data)
@@ -15,6 +15,7 @@
     + [get-dump-block-by-number](#get-dump-block-by-number)
     + [get-dump-block-by-hash](#get-dump-block-by-hash)
     + [get-count-blocks](#get-count-blocks)
+    + [get-forging-sum](#get-forging-sum)
     + [status](#status)
   * Proxy node - [Send data](#send-data)
     + [mhc_send](#mhc_send)
@@ -926,6 +927,44 @@ POST http://tor.net-main.metahashnetwork.com:5795
     "id": 1,
     "result": {
         "count_blocks": 1340489
+    }
+}
+```
+
+###get-forging-sum-all
+```JSON
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "method": "get-forging-sum-all"
+}
+// RESPONSE --->
+{
+    "id": 1,
+    "result": {
+        "blockNumber": 1429969,
+        "sums": [
+            {
+                "type": 101,
+                "value": 6684472230145
+            },
+            {
+                "type": 100,
+                "value": 0
+            },
+            {
+                "type": 102,
+                "value": 155858088879880
+            },
+            {
+                "type": 104,
+                "value": 35506056329070
+            },
+            {
+                "type": 103,
+                "value": 194789794021418
+            }
+        ]
     }
 }
 ```
