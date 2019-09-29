@@ -1,4 +1,4 @@
-# MetaHash API (document version 0.0.4)
+# MetaHash API (document version 0.0.5)
 - [MetaHash API](#metahash-api)
   * [Sources](#sources)
   * Torrent nodes - [Get data](#get-data)
@@ -1224,7 +1224,6 @@ POST http://proxy.net-main.metahashnetwork.com:9999
   "method":"mhc_send",
   "params":
   {
-    "transaction":"0004cd0ecb06e091efd2fc486d13c94eafd422486d0d3fc80c01000100",
     "to":"0x0004cd0ecb06e091efd2fc486d13c94eafd422486d0d3fc80c",
     "value":"1",
     "fee":"",
